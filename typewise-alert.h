@@ -28,7 +28,7 @@ typedef struct {
 
 #define OK 0
 #define NOT_OK -1
-void checkAndAlert(
+int checkAndAlert(
   AlertTarget alertTarget, BatteryCharacter batteryChar, double temperatureInC);
 
 void sendToController(BreachType breachType);
