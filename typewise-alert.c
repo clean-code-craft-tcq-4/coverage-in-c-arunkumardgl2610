@@ -3,11 +3,11 @@
 
 BreachType inferBreach(double value, double lowerLimit, double upperLimit) {
   if(value < lowerLimit) {
-    return TOO_LOW;
+    return TOOLOW;
   }
   else if(value > upperLimit) 
   {
-    return TOO_HIGH;
+    return TOOHIGH;
   }
   else
   {
@@ -64,12 +64,12 @@ void sendToController(BreachType breachType) {
 
 void sendToEmail(BreachType breachType) {
   const char* recepient = "a.b@c.com";
-  if(breachType == TOO_LOW)
+  if(breachType == TOOLOW)
   {
     printf("To: %s\n", recepient);
     printf("Hi, the temperature is too low\n");
   }
-  else if(breachType == TOO_HIGH)
+  else if(breachType == TOOHIGH)
   {
     printf("To: %s\n", recepient);
     printf("Hi, the temperature is too high\n");
