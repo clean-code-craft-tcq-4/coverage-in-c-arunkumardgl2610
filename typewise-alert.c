@@ -18,12 +18,12 @@ BreachType classifyTemperatureBreach(
     CoolingType coolingType, double temperatureInC) {
   int lowerLimit = 0;
   int upperLimit = 0;
-  if(coolingType == PASSIVE_COOLING)
+  if(coolingType == PASSIVECOOLING)
   {
     lowerLimit = 0;
       upperLimit = 35;
   }
-  else if(coolingType == HI_ACTIVE_COOLING)
+  else if(coolingType == HIACTIVECOOLING)
   {
     lowerLimit = 0;
       upperLimit = 45;
@@ -44,12 +44,12 @@ return SendAlert(breachType,alertTarget);
 }
 int SendAlert(BreachType breachtype,AlertTarget alerttarget)
 {
-  if(alerttarget == TO_CONTROLLER)
+  if(alerttarget == TOCONTROLLER)
   {
    sendToController(breachtype);
     return OK;
   }
-  if(alerttarget == TO_EMAIL)
+  if(alerttarget == TOEMAIL)
   {
    sendToEmail(breachtype);
     return OK;
